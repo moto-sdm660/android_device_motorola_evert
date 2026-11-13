@@ -38,6 +38,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice': blob_fixup()
+        .binary_regex_replace(b'/sys/devices/soc\x00', b'/dev/fpc_soc\x00\x00\x00\x00\x00'),
     'vendor/bin/charge_only_mode': blob_fixup()
         .add_needed('libmemset_shim.so'),
     'vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-evert.rc': blob_fixup()
