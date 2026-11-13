@@ -43,7 +43,10 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/evert_manifest.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/c0c4000.sdhci
-TARGET_KERNEL_CONFIG := lineageos_evert_defconfig
+TARGET_KERNEL_CONFIG := \
+    vendor/sdm660-perf_defconfig \
+    vendor/ext_config/moto-sdm660.config \
+    vendor/ext_config/evert.config
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
