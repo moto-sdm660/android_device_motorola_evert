@@ -369,15 +369,6 @@ vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libmmcamera_tintless_algo.so
 vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 
-# Camera - Moto Signature - from lake_retail (QPWS30.61-21-18-7-12)
-system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED|0a3224393820c64d2079cb3076ad2631fd382077
-system/etc/permissions/com.motorola.motosignature.xml|657458b1f279e2158db87925dcd518d48f9afcf7
-system/framework/com.motorola.motosignature.jar|a384c15ecffc3c9148f399549e4353f4e49d75fd
-
-# Camera - MotCamera2
-system/etc/permissions/privapp-permissions-com.motorola.camera2.xml
-system/priv-app/MotCamera2/MotCamera2.apk
-
 # Camera - Postprocessing
 vendor/lib/libS5k2l7Pdaf.so
 vendor/lib/libS5k2l7PdafCamif.so
