@@ -71,7 +71,7 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
 
 # Lineage Touch HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.sdm660
+    vendor.lineage.touch-service.sdm660
 
 # LiveDisplay
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
