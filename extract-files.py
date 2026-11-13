@@ -42,6 +42,15 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'/sys/devices/soc\x00', b'/dev/fpc_soc\x00\x00\x00\x00\x00'),
     'vendor/bin/charge_only_mode': blob_fixup()
         .add_needed('libmemset_shim.so'),
+    # The Pie HAL reads private_handle_t::size and ::offset at their gralloc1
+    # (kernel 4.4 display HAL) offsets, 52 and 56. With the 4.19 gralloc
+    # they live at 72 and 76, and offset 52 holds layer_count, so every
+    # gralloc buffer would be mapped one page long. In
+    # QCamera3GrallocMemory::registerBuffer: the ldrd feeding a debug log
+    # and the ldr feeding the mmap length.
+    'vendor/lib/hw/camera.sdm660.so': blob_fixup()
+        .binary_regex_replace(b'\xc1\x68\xd0\xe9\x0d\x20\xcd\xe9\x03\x20', b'\xc1\x68\xd0\xe9\x12\x20\xcd\xe9\x03\x20')
+        .binary_regex_replace(b'\xd9\xf8\x0c\x17\x49\x6b\x79\x61', b'\xd9\xf8\x0c\x17\x89\x6c\x79\x61'),
     'vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-evert.rc': blob_fixup()
         .regex_replace('system input', 'system uhid input'),
     (
