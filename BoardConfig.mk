@@ -38,6 +38,9 @@ TARGET_OTA_ASSERT_DEVICE := evert
 # Display
 TARGET_SCREEN_DENSITY := 420
 
+# Graphics
+TARGET_USES_VULKAN := true
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/evert_manifest.xml
 
